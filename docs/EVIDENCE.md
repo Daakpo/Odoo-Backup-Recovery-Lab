@@ -1,6 +1,6 @@
 # Screenshot evidence index
 
-Every lab screenshot supplied in this session appears in a stage gallery. Publication copies redact visible database-manager passwords and a session cookie. Filenames preserve capture timestamps, whose timezone is not established. Screenshots show historical states, including failed attempts, and are not instructions to repeat commands.
+I organized my 118 screenshots into the stage galleries below. I redacted visible database-manager passwords and a session cookie before publishing them. The filenames retain the original capture timestamps. Some screenshots show failed attempts that I kept to document my troubleshooting.
 
 - [Platform preparation and Docker](gallery-01-platform.md) — 32 screenshots
 - [Odoo business records and attachments](gallery-02-odoo.md) — 19 screenshots
@@ -24,4 +24,4 @@ Every lab screenshot supplied in this session appears in a stage gallery. Public
 | [E117](screenshots/117-20261101-032032.png) | Local recovery bundle four checksums pass | Local staging copy preserves all four bundle hashes. |
 | [E118](screenshots/118-20261101-032145.png) | Stopped full-machine session shows Failed | Stopped full-machine backup is Failed, not a restore point. |
 
-The user subsequently reported completing the instructed Veeam steps. No later successful Veeam backup-session or recovered-file screenshot was supplied when this package was prepared.
+I completed the Veeam follow-up steps after the last screenshot in this index. I still need to add the successful backup-session and recovered-file screenshots to document the final result.

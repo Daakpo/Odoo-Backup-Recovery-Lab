@@ -24,7 +24,7 @@ The password stayed in a private prompt:
 smbclient //192.168.2.90/VeeamBackups -U 'GM-PC\veeambackup'
 ```
 
-The actual upload test wrote a 33-byte text file and listed it successfully. Veeam later reported `Repository_1` as SMB and accessible. Repository access alone does not prove that a backup has completed.
+I uploaded a 33-byte test file and listed it successfully. Veeam later reported `Repository_1` as SMB and accessible. Repository access alone does not prove that a backup has completed.
 
 ![SMB upload test succeeds](screenshots/085-20261101-013449.png)
 
@@ -32,7 +32,7 @@ The actual upload test wrote a 33-byte text file and listed it successfully. Vee
 
 ## Agent installation
 
-The `veeam-release-deb_13.0.2_amd64.deb` file configured the package repository. It was not the complete Agent installer. Updating APT exposed Veeam Agent version **13.1.2.11**, which the lab installed along with its `blksnap` dependency.
+The `veeam-release-deb_13.0.2_amd64.deb` file configured the package repository. It was not the complete Agent installer. After updating APT, I installed Veeam Agent **13.1.2.11** along with its `blksnap` dependency.
 
 Kernel module work targeted `6.8.0-85-generic`. After the temporary-workspace cleanup incident described in the troubleshooting report, reinstalling the current kernel headers and rebuilding DKMS restored `veeamblksnap.ko` and `bdevfilter.ko`. `modinfo` showed both under `/lib/modules/6.8.0-85-generic/updates/dkms/` with version 13.1.2.11.
 
@@ -54,7 +54,7 @@ Normal stop left the session in `Stopping`. A forced stop ended it with `Failed`
 
 ## Smaller file-backup workflow
 
-The prepared source is `/home/germain/odoo-veeam-source`, containing the existing verified 7.5 MB manual recovery bundle. The instructed Veeam configuration uses:
+I staged my verified 7.5 MB manual recovery bundle in `/home/germain/odoo-veeam-source`. My follow-up Veeam workflow uses these settings:
 
 | Option | Intended value |
 |---|---|
@@ -73,9 +73,9 @@ A snapshot-less backup suits this static exported bundle. It does not turn copie
 
 ## Verification boundary
 
-The last supplied screenshot shows the old full-machine session as `Failed`. The user subsequently reported that the instructed work was done. The publication package records that update without inventing a successful Veeam session or restore result.
+My last screenshot shows the earlier full-machine session as `Failed`. I completed the follow-up steps afterward, but I have not yet added the final successful backup-session and recovered-file screenshots. Those results remain pending verification in this repository.
 
-Evidence needed to close the Veeam exercise:
+To finish documenting my Veeam exercise, I still need to add:
 
 1. A saved job summary showing file-level scope, the source directory and snapshot disabled.
 2. A backup session with final state `Success` and a usable restore point.

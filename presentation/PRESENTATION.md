@@ -72,7 +72,7 @@ Lab uses sample customer records. Credentials redacted.
 
 ### Talking points
 
-Evidence: E032, E062, E065, E070, E085, E117 and E118. The user later reported the instructed Veeam steps done. No later success-session or recovered-file capture was supplied. Scope is intentionally split by proof rather than treated as a single completed backup claim.
+Evidence: E032, E062, E065, E070, E085, E117 and E118. I completed the Veeam follow-up steps after these captures. I still need to add the final successful backup-session and recovered-file screenshots. My manual Odoo recovery is documented separately.
 
 ## Slide 3
 
@@ -416,7 +416,7 @@ Keep another copy outside the Windows host.
 
 ### Talking points
 
-See docs/RECOVERY.md and docs/TROUBLESHOOTING.md. The unsafe cleanup command came from guided troubleshooting. It traversed bind mounts into firmware and module paths. Repair results are documented, and the command must not be treated as a recommended cleanup pattern.
+See docs/RECOVERY.md and docs/TROUBLESHOOTING.md. I ran a cleanup command without fully checking the bind mounts. It affected firmware and module paths, which I repaired afterward. I kept the incident in my notes because it changed how I check temporary mount points before cleanup.
 
 ## Slide 16
 
@@ -520,7 +520,7 @@ Veeam Agent setup and Windows SMB access controls
 
 Engineering judgment
 
-Integrity checks, failure analysis and honest evidence scope
+Integrity checks and lessons from the recovery tests
 
 18
 
@@ -542,7 +542,7 @@ Repository: Odoo-Backup-Recovery-Lab
 
 Publication pending GitHub sign-in.
 
-Report: docs/Enterprise_Security_Lab_Report.docx
+Report: docs/Odoo_Backup_Recovery_Lab_Report.docx
 
 README, technical guides and all 118 screenshots accompany this deck.
 

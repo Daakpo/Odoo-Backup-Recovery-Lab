@@ -5,9 +5,9 @@
 
 ## Executive overview
 
-This lab deploys Odoo 18 and PostgreSQL 16 on Ubuntu 22.04 using Docker Compose. A coordinated database, filestore and configuration backup produced an approximately 7.5 MB recovery bundle. Four SHA-256 manifest checks passed. A separate recovery project returned quotation S00001 through SQL and the Odoo interface.
+I deployed Odoo 18 and PostgreSQL 16 on Ubuntu 22.04 using Docker Compose. I backed up the database, filestore and configuration into an approximately 7.5 MB bundle, then verified all four SHA-256 manifest entries. After restoring into a separate project, I confirmed quotation S00001 through SQL and the Odoo interface.
 
-The Veeam work establishes Linux agent installation, kernel-module troubleshooting and SMB destination access. The recorded full-machine attempt failed; a later successful backup and recovered-file proof are not included. No bare-metal recovery or measured RTO/RPO is claimed.
+I installed Veeam Agent for Linux, repaired its kernel modules and verified access to the Windows SMB destination. My full-machine attempt failed under storage pressure. I still need to add final backup and recovered-file evidence for the follow-up workflow. I have not completed bare-metal recovery or measured RTO/RPO.
 
 ## Engineering report
 
@@ -26,6 +26,6 @@ Database recovery and filestore recovery must be coordinated. A readable backup 
 
 ## Presentation
 
-[View the PDF](Presentation.pdf) · [Download the PowerPoint from the release](https://github.com/Daakpo/Odoo-Backup-Recovery-Lab/releases/tag/Backup_Lab)
+[View the PDF](Presentation.pdf) · [Download the PowerPoint](Odoo_Backup_Recovery_Lab.pptx)
 
 The release describes the initial milestone. The current repository runbooks and evidence index define the available implementation and verification scope.

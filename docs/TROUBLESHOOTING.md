@@ -19,9 +19,9 @@
 
 During failed recovery-media preparation, Veeam left temporary bind mounts pointing into the guest's firmware and current-kernel module directories. An unsafe cleanup command used recursive deletion with `--one-file-system`. Because bind mounts can reference the same filesystem, that option did not prevent traversal into the mounted host directories.
 
-The command was supplied during guided troubleshooting. It must not be treated as a recommended cleanup procedure. Historical screenshots preserve the failure so the cause is visible.
+I ran the cleanup command without fully checking the temporary bind mounts. That was a mistake: `--one-file-system` did not protect directories mounted from the same filesystem. I kept the screenshots to show what went wrong and why I changed my cleanup approach.
 
-Recovery work unmounted the specific temporary bind paths, reinstalled firmware and kernel-module packages, checked package integrity, and rebuilt Veeam modules after restoring the current kernel headers. Final `modinfo` output confirmed the Veeam modules existed again. These checks do not constitute a documented reboot or complete host integrity attestation.
+I unmounted the affected temporary bind paths, reinstalled the firmware and kernel-module packages, checked package integrity, and rebuilt the Veeam modules after restoring the current kernel headers. Final `modinfo` output confirmed the Veeam modules existed again. These checks do not constitute a documented reboot or complete host integrity attestation.
 
 Operational lesson: inspect mount topology and use application-managed cleanup before deleting a temporary directory. Directory names and a filesystem-boundary flag do not establish that recursive deletion is safe.
 

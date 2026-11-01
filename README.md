@@ -4,9 +4,9 @@
 
 Germain Daakpo Amouzou · IT infrastructure and cybersecurity portfolio
 
-This lab deploys Odoo 18 with PostgreSQL 16 in Docker, creates business records and attachments, and restores the application into a separate Compose project. It also configures a dedicated Windows SMB destination for Veeam Agent for Linux and documents the troubleshooting required on a storage-constrained VM.
+I built this lab to practise backing up and recovering a business application. I deployed Odoo 18 with PostgreSQL 16 in Docker, created test records and attachments, and restored them into a separate Compose project. I also configured a Windows SMB destination for Veeam Agent for Linux and worked through storage issues on my Ubuntu VM.
 
-The central recovery result is a working isolated Odoo instance with quotation **S00001**, together with integrity checks on the database, filestore and configuration backup. The Veeam section records the observed job failure and the subsequent preparation of a small recovery bundle for a snapshot-less file backup.
+I recovered quotation **S00001** in an isolated Odoo instance and verified the database, filestore and configuration bundle with SHA-256 checks. My full-machine Veeam attempt ran into storage problems, so I prepared a smaller recovery bundle for file-level backup.
 
 ## Project results
 
@@ -18,7 +18,7 @@ The central recovery result is a working isolated Odoo instance with quotation *
 | Isolated manual restore | Separate project and volumes, SQL and browser validation | [Recovery evidence](docs/RECOVERY.md#restore-validation) |
 | Windows SMB repository | Dedicated account, share access and upload verified | [Veeam integration](docs/VEEAM.md#windows-smb-destination) |
 | Veeam full-machine attempt | Stopped after snapshot storage pressure, final state Failed | [Incident review](docs/TROUBLESHOOTING.md) |
-| Veeam file backup and file recovery | Follow-up steps reported done by the user; success evidence not yet supplied | [Verification boundary](docs/VEEAM.md#verification-boundary) |
+| Veeam file backup and file recovery | Follow-up steps completed; final backup and restore screenshots still to be added | [Verification boundary](docs/VEEAM.md#verification-boundary) |
 
 ![Restored Odoo quotation list](docs/screenshots/070-20261101-005827.png)
 
@@ -77,10 +77,10 @@ Checksums establish file integrity. SQL and browser checks establish usable appl
 - [Troubleshooting and lessons learned](docs/TROUBLESHOOTING.md)
 - [Technical report and engineering notes](docs/REPORT.md) · [Word report](docs/Odoo_Backup_Recovery_Lab_Report.docx)
 - [Complete screenshot index](docs/EVIDENCE.md)
-- [Presentation PDF](docs/Presentation.pdf) and [PowerPoint release](https://github.com/Daakpo/Odoo-Backup-Recovery-Lab/releases/tag/Backup_Lab)
+- [Presentation PDF](docs/Presentation.pdf) and [PowerPoint presentation](docs/Odoo_Backup_Recovery_Lab.pptx)
 - [Presentation outline and talking points](presentation/PRESENTATION.md)
 
-All 118 publication screenshots appear in six workflow galleries. Failed attempts remain labeled as historical diagnostics.
+I organized my 118 screenshots into six galleries. I kept the failed attempts because they explain the problems I encountered and how I investigated them.
 
 ## Environment
 
@@ -99,7 +99,7 @@ The observed container address is session-specific. Reinspect it after recreatin
 
 ## Reusable configuration
 
-[`compose.yaml`](compose.yaml) reconstructs the documented original service layout. It is a sanitized reference, not an export of the user's live VM. [`compose.recovery.yaml`](compose.recovery.yaml) supplies a separate recovery project with an internal network and scheduled Odoo workers disabled.
+I included sanitized versions of my deployment in [`compose.yaml`](compose.yaml) and [`compose.recovery.yaml`](compose.recovery.yaml). The recovery project uses an internal network, separate volumes and disabled Odoo scheduled workers. My live credentials and private configuration are excluded.
 
 For a new lab deployment on Ubuntu with Docker Engine and the Compose plugin installed:
 
@@ -139,11 +139,11 @@ Linux storage diagnosis, Docker Compose administration, PostgreSQL logical backu
 
 ## Scope and limitations
 
-This is a lab demonstration. It establishes manual application recovery, not production high availability or a completed bare-metal recovery exercise. No measured RTO or RPO is claimed. A checksum proves byte integrity against its manifest, while application checks establish whether restored data is usable. Veeam success requires its own completed-session and restored-file evidence.
+I completed and validated the manual Odoo recovery. I have not tested production high availability or completed a bare-metal recovery, and I have not measured RTO or RPO. My checksum checks confirm file integrity; the SQL and browser checks confirm that the restored application can serve the recovered data. I still need to add the final Veeam backup and restored-file evidence.
 
 ## Résumé en français
 
-Déploiement d'Odoo 18 et PostgreSQL dans Docker sur Ubuntu, sauvegarde coordonnée de la base de données et du filestore, puis restauration dans un environnement distinct. Validation par la commande S00001, l'interface Odoo et les empreintes SHA-256. Intégration d'un partage SMB Windows pour Veeam Agent et documentation des incidents de stockage.
+J’ai déployé Odoo 18 et PostgreSQL dans Docker sur Ubuntu, sauvegardé la base de données et le filestore, puis restauré l’application dans un environnement distinct. J’ai validé la récupération avec la commande S00001, l’interface Odoo et les empreintes SHA-256. J’ai aussi configuré un partage SMB Windows pour Veeam Agent et documenté les problèmes de stockage rencontrés.
 
 ## Author
 

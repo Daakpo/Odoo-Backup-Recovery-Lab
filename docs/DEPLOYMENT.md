@@ -4,9 +4,9 @@
 
 ## Ubuntu preparation
 
-The Ubuntu guest initially had a full root filesystem and a graphical startup problem. Investigation covered `df -h /`, top-level directory sizes, journal usage, disabled Snap revisions and large files in the home directory. Journal cleanup recovered approximately 760 MB. After user-confirmed removal of an unneeded virtual disk, free space reached approximately 7.2 GB. This was a specific lab cleanup decision, not a reusable instruction to delete virtual disks.
+My Ubuntu VM initially had a full root filesystem and could not start the desktop normally. I checked `df -h /`, directory sizes, journal usage, disabled Snap revisions and large files in my home directory. Cleaning the journal recovered about 760 MB. After checking that an unused virtual disk was no longer needed, I removed it and brought free space to about 7.2 GB.
 
-The guest RAM allocation increased from 2 GB to 4 GB. The desktop returned and VirtualBox clipboard integration supported the remaining setup.
+I increased the VM’s RAM from 2 GB to 4 GB. Once the desktop was working again, I used VirtualBox clipboard integration for the rest of the setup.
 
 ![VM memory increased to 4 GB](screenshots/022-20261031-211050.png)
 
@@ -14,9 +14,9 @@ The guest RAM allocation increased from 2 GB to 4 GB. The desktop returned and V
 
 ## Docker and Compose
 
-Docker Engine and the Compose plugin came from Docker's Ubuntu repository. The signing key lived at `/etc/apt/keyrings/docker.asc`. Installation included `docker-ce`, `docker-ce-cli`, `containerd.io`, `docker-buildx-plugin` and `docker-compose-plugin`. The `hello-world` container ran successfully. Docker administration used `sudo`.
+I installed Docker Engine and the Compose plugin from Docker's Ubuntu repository. The signing key lived at `/etc/apt/keyrings/docker.asc`. Installation included `docker-ce`, `docker-ce-cli`, `containerd.io`, `docker-buildx-plugin` and `docker-compose-plugin`. The `hello-world` container ran successfully. Docker administration used `sudo`.
 
-The project directory was `/home/germain/enterprise-security-lab`, with separate `addons`, `config`, `scripts` and documentation directories. A locally generated PostgreSQL password lived in an owner-readable `.env` file and stayed outside version control.
+I created the project in `/home/germain/enterprise-security-lab`, with separate `addons`, `config`, `scripts` and documentation directories. I generated a PostgreSQL password locally and kept it in an owner-readable `.env` file outside version control.
 
 ## Service design
 
