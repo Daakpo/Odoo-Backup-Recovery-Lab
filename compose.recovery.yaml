@@ -1,0 +1,38 @@
+# Use alone: docker compose --env-file .env -f compose.recovery.yaml ...
+# Reconstructed recovery reference. Restore private data before starting Odoo.
+name: enterprise-security-lab-restore
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  odoo:
+    image: odoo:18.0
+    command: ["odoo", "--max-cron-threads=0"]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - odoo-data:/var/lib/odoo
+      - ./addons:/mnt/extra-addons:ro
+      # Mount the recovered private config only after reviewing it:
+      # - ./config/odoo.conf:/etc/odoo/odoo.conf:ro
+volumes:
+  postgres-data:
+  odoo-data:
+networks:
+  default:
+    internal: true

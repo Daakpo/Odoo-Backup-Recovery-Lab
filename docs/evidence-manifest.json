@@ -1,0 +1,828 @@
+[
+  {
+    "id": "E001",
+    "stamp": "20261031-200412",
+    "file": "001-20261031-200412.png",
+    "caption": "Ubuntu startup failure",
+    "redacted": false
+  },
+  {
+    "id": "E002",
+    "stamp": "20261031-201811",
+    "file": "002-20261031-201811.png",
+    "caption": "Ubuntu boot and filesystem recovery",
+    "redacted": false
+  },
+  {
+    "id": "E003",
+    "stamp": "20261031-202301",
+    "file": "003-20261031-202301.png",
+    "caption": "Ubuntu release and console login",
+    "redacted": false
+  },
+  {
+    "id": "E004",
+    "stamp": "20261031-202422",
+    "file": "004-20261031-202422.png",
+    "caption": "Initial disk command troubleshooting",
+    "redacted": false
+  },
+  {
+    "id": "E005",
+    "stamp": "20261031-202514",
+    "file": "005-20261031-202514.png",
+    "caption": "Console disk inspection",
+    "redacted": false
+  },
+  {
+    "id": "E006",
+    "stamp": "20261031-202643",
+    "file": "006-20261031-202643.png",
+    "caption": "Root filesystem at 100 percent",
+    "redacted": false
+  },
+  {
+    "id": "E007",
+    "stamp": "20261031-202903",
+    "file": "007-20261031-202903.png",
+    "caption": "Disk command syntax troubleshooting",
+    "redacted": false
+  },
+  {
+    "id": "E008",
+    "stamp": "20261031-203019",
+    "file": "008-20261031-203019.png",
+    "caption": "Root usage confirmation",
+    "redacted": false
+  },
+  {
+    "id": "E009",
+    "stamp": "20261031-203159",
+    "file": "009-20261031-203159.png",
+    "caption": "Top-level disk usage",
+    "redacted": false
+  },
+  {
+    "id": "E010",
+    "stamp": "20261031-203342",
+    "file": "010-20261031-203342.png",
+    "caption": "Var directory investigation",
+    "redacted": false
+  },
+  {
+    "id": "E011",
+    "stamp": "20261031-203539",
+    "file": "011-20261031-203539.png",
+    "caption": "Storage usage details",
+    "redacted": false
+  },
+  {
+    "id": "E012",
+    "stamp": "20261031-203910",
+    "file": "012-20261031-203910.png",
+    "caption": "Journal and Snap investigation",
+    "redacted": false
+  },
+  {
+    "id": "E013",
+    "stamp": "20261031-204219",
+    "file": "013-20261031-204219.png",
+    "caption": "Disabled Snap revisions removed",
+    "redacted": false
+  },
+  {
+    "id": "E014",
+    "stamp": "20261031-204811",
+    "file": "014-20261031-204811.png",
+    "caption": "Desktop restored",
+    "redacted": false
+  },
+  {
+    "id": "E015",
+    "stamp": "20261031-204926",
+    "file": "015-20261031-204926.png",
+    "caption": "Home directory usage",
+    "redacted": false
+  },
+  {
+    "id": "E016",
+    "stamp": "20261031-205218",
+    "file": "016-20261031-205218.png",
+    "caption": "Docker availability check",
+    "redacted": false
+  },
+  {
+    "id": "E017",
+    "stamp": "20261031-205552",
+    "file": "017-20261031-205552.png",
+    "caption": "Large home files investigation",
+    "redacted": false
+  },
+  {
+    "id": "E018",
+    "stamp": "20261031-205749",
+    "file": "018-20261031-205749.png",
+    "caption": "Virtual disk file identification",
+    "redacted": false
+  },
+  {
+    "id": "E019",
+    "stamp": "20261031-210121",
+    "file": "019-20261031-210121.png",
+    "caption": "Unused virtual disk inspection",
+    "redacted": false
+  },
+  {
+    "id": "E020",
+    "stamp": "20261031-210353",
+    "file": "020-20261031-210353.png",
+    "caption": "Confirmed removal and recovered disk space",
+    "redacted": false
+  },
+  {
+    "id": "E021",
+    "stamp": "20261031-210526",
+    "file": "021-20261031-210526.png",
+    "caption": "Initial VM memory check",
+    "redacted": false
+  },
+  {
+    "id": "E022",
+    "stamp": "20261031-211050",
+    "file": "022-20261031-211050.png",
+    "caption": "VM memory increased to 4 GB",
+    "redacted": false
+  },
+  {
+    "id": "E023",
+    "stamp": "20261031-211906",
+    "file": "023-20261031-211906.png",
+    "caption": "Docker repository key setup",
+    "redacted": false
+  },
+  {
+    "id": "E024",
+    "stamp": "20261031-213839",
+    "file": "024-20261031-213839.png",
+    "caption": "Docker repository definition",
+    "redacted": false
+  },
+  {
+    "id": "E025",
+    "stamp": "20261031-213950",
+    "file": "025-20261031-213950.png",
+    "caption": "Docker package index update",
+    "redacted": false
+  },
+  {
+    "id": "E026",
+    "stamp": "20261031-214203",
+    "file": "026-20261031-214203.png",
+    "caption": "Docker Engine installation",
+    "redacted": false
+  },
+  {
+    "id": "E027",
+    "stamp": "20261031-214408",
+    "file": "027-20261031-214408.png",
+    "caption": "Docker hello-world and Compose validation",
+    "redacted": false
+  },
+  {
+    "id": "E028",
+    "stamp": "20261031-214652",
+    "file": "028-20261031-214652.png",
+    "caption": "Project directory structure",
+    "redacted": false
+  },
+  {
+    "id": "E029",
+    "stamp": "20261031-214913",
+    "file": "029-20261031-214913.png",
+    "caption": "Environment file and ignore rules",
+    "redacted": false
+  },
+  {
+    "id": "E030",
+    "stamp": "20261031-215027",
+    "file": "030-20261031-215027.png",
+    "caption": "Compose service configuration",
+    "redacted": false
+  },
+  {
+    "id": "E031",
+    "stamp": "20261031-215614",
+    "file": "031-20261031-215614.png",
+    "caption": "Compose validation and image download",
+    "redacted": false
+  },
+  {
+    "id": "E032",
+    "stamp": "20261031-215827",
+    "file": "032-20261031-215827.png",
+    "caption": "Healthy PostgreSQL and running Odoo",
+    "redacted": false
+  },
+  {
+    "id": "E033",
+    "stamp": "20261031-220212",
+    "file": "033-20261031-220212.png",
+    "caption": "Database manager setup with password redacted",
+    "redacted": true
+  },
+  {
+    "id": "E034",
+    "stamp": "20261031-220543",
+    "file": "034-20261031-220543.png",
+    "caption": "Enterprise lab database settings with password redacted",
+    "redacted": true
+  },
+  {
+    "id": "E035",
+    "stamp": "20261031-221202",
+    "file": "035-20261031-221202.png",
+    "caption": "Odoo application selection",
+    "redacted": false
+  },
+  {
+    "id": "E036",
+    "stamp": "20261031-221620",
+    "file": "036-20261031-221620.png",
+    "caption": "Odoo application activation",
+    "redacted": false
+  },
+  {
+    "id": "E037",
+    "stamp": "20261031-222430",
+    "file": "037-20261031-222430.png",
+    "caption": "Test customer creation",
+    "redacted": false
+  },
+  {
+    "id": "E038",
+    "stamp": "20261031-222606",
+    "file": "038-20261031-222606.png",
+    "caption": "Saved test customer",
+    "redacted": false
+  },
+  {
+    "id": "E039",
+    "stamp": "20261031-223119",
+    "file": "039-20261031-223119.png",
+    "caption": "IT Support Package service",
+    "redacted": false
+  },
+  {
+    "id": "E040",
+    "stamp": "20261031-223810",
+    "file": "040-20261031-223810.png",
+    "caption": "Service product configuration",
+    "redacted": false
+  },
+  {
+    "id": "E041",
+    "stamp": "20261031-224041",
+    "file": "041-20261031-224041.png",
+    "caption": "Quotation creation",
+    "redacted": false
+  },
+  {
+    "id": "E042",
+    "stamp": "20261031-224305",
+    "file": "042-20261031-224305.png",
+    "caption": "Quotation line and total",
+    "redacted": false
+  },
+  {
+    "id": "E043",
+    "stamp": "20261031-224610",
+    "file": "043-20261031-224610.png",
+    "caption": "Saved quotation S00001",
+    "redacted": false
+  },
+  {
+    "id": "E044",
+    "stamp": "20261031-224809",
+    "file": "044-20261031-224809.png",
+    "caption": "Recovery text file creation",
+    "redacted": false
+  },
+  {
+    "id": "E045",
+    "stamp": "20261031-224928",
+    "file": "045-20261031-224928.png",
+    "caption": "Recovery text file content",
+    "redacted": false
+  },
+  {
+    "id": "E046",
+    "stamp": "20261031-225104",
+    "file": "046-20261031-225104.png",
+    "caption": "Quotation PDF generated",
+    "redacted": false
+  },
+  {
+    "id": "E047",
+    "stamp": "20261031-225549",
+    "file": "047-20261031-225549.png",
+    "caption": "Quotation attachment preparation",
+    "redacted": false
+  },
+  {
+    "id": "E048",
+    "stamp": "20261031-225745",
+    "file": "048-20261031-225745.png",
+    "caption": "Attachment copy in Downloads",
+    "redacted": false
+  },
+  {
+    "id": "E049",
+    "stamp": "20261031-225955",
+    "file": "049-20261031-225955.png",
+    "caption": "Quotation PDF attached",
+    "redacted": false
+  },
+  {
+    "id": "E050",
+    "stamp": "20261031-230132",
+    "file": "050-20261031-230132.png",
+    "caption": "Text and PDF attachments in Odoo",
+    "redacted": false
+  },
+  {
+    "id": "E051",
+    "stamp": "20261031-230303",
+    "file": "051-20261031-230303.png",
+    "caption": "Recovery text baseline",
+    "redacted": false
+  },
+  {
+    "id": "E052",
+    "stamp": "20261101-000329",
+    "file": "052-20261101-000329.png",
+    "caption": "Windows drive capacity check",
+    "redacted": false
+  },
+  {
+    "id": "E053",
+    "stamp": "20261101-001340",
+    "file": "053-20261101-001340.png",
+    "caption": "Windows Odoo backup directory",
+    "redacted": false
+  },
+  {
+    "id": "E054",
+    "stamp": "20261101-001513",
+    "file": "054-20261101-001513.png",
+    "caption": "Backup directory in Explorer",
+    "redacted": false
+  },
+  {
+    "id": "E055",
+    "stamp": "20261101-002721",
+    "file": "055-20261101-002721.png",
+    "caption": "VirtualBox shared folder setup",
+    "redacted": false
+  },
+  {
+    "id": "E056",
+    "stamp": "20261101-002819",
+    "file": "056-20261101-002819.png",
+    "caption": "Permanent shared folder configuration",
+    "redacted": false
+  },
+  {
+    "id": "E057",
+    "stamp": "20261101-002937",
+    "file": "057-20261101-002937.png",
+    "caption": "Shared folder mount verification",
+    "redacted": false
+  },
+  {
+    "id": "E058",
+    "stamp": "20261101-003429",
+    "file": "058-20261101-003429.png",
+    "caption": "Ubuntu shared folder write test",
+    "redacted": false
+  },
+  {
+    "id": "E059",
+    "stamp": "20261101-003741",
+    "file": "059-20261101-003741.png",
+    "caption": "Windows and Ubuntu transfer verification",
+    "redacted": false
+  },
+  {
+    "id": "E060",
+    "stamp": "20261101-003945",
+    "file": "060-20261101-003945.png",
+    "caption": "Original Odoo service status",
+    "redacted": false
+  },
+  {
+    "id": "E061",
+    "stamp": "20261101-004134",
+    "file": "061-20261101-004134.png",
+    "caption": "Manual recovery bundle creation and restart issue",
+    "redacted": false
+  },
+  {
+    "id": "E062",
+    "stamp": "20261101-004249",
+    "file": "062-20261101-004249.png",
+    "caption": "Original service restarted and four checksums passed",
+    "redacted": false
+  },
+  {
+    "id": "E063",
+    "stamp": "20261101-004447",
+    "file": "063-20261101-004447.png",
+    "caption": "Recovery archive contents inspection",
+    "redacted": false
+  },
+  {
+    "id": "E064",
+    "stamp": "20261101-004733",
+    "file": "064-20261101-004733.png",
+    "caption": "Isolated recovery Compose project",
+    "redacted": false
+  },
+  {
+    "id": "E065",
+    "stamp": "20261101-004927",
+    "file": "065-20261101-004927.png",
+    "caption": "Restored database query confirms S00001",
+    "redacted": false
+  },
+  {
+    "id": "E066",
+    "stamp": "20261101-005046",
+    "file": "066-20261101-005046.png",
+    "caption": "Filestore extraction and restored services",
+    "redacted": false
+  },
+  {
+    "id": "E067",
+    "stamp": "20261101-005224",
+    "file": "067-20261101-005224.png",
+    "caption": "Loopback connection test fails",
+    "redacted": false
+  },
+  {
+    "id": "E068",
+    "stamp": "20261101-005342",
+    "file": "068-20261101-005342.png",
+    "caption": "Restore configuration and application logs",
+    "redacted": false
+  },
+  {
+    "id": "E069",
+    "stamp": "20261101-005538",
+    "file": "069-20261101-005538.png",
+    "caption": "Restored instance returns HTTP 200 with cookie redacted",
+    "redacted": true
+  },
+  {
+    "id": "E070",
+    "stamp": "20261101-005827",
+    "file": "070-20261101-005827.png",
+    "caption": "Restored Odoo quotation list at container IP",
+    "redacted": false
+  },
+  {
+    "id": "E071",
+    "stamp": "20261101-010038",
+    "file": "071-20261101-010038.png",
+    "caption": "Quotation PDF validation view",
+    "redacted": false
+  },
+  {
+    "id": "E072",
+    "stamp": "20261101-010302",
+    "file": "072-20261101-010302.png",
+    "caption": "Quotation and attachment validation view",
+    "redacted": false
+  },
+  {
+    "id": "E073",
+    "stamp": "20261101-010451",
+    "file": "073-20261101-010451.png",
+    "caption": "Recovery text downloaded and opened",
+    "redacted": false
+  },
+  {
+    "id": "E074",
+    "stamp": "20261101-010555",
+    "file": "074-20261101-010555.png",
+    "caption": "Text attachment checksum comparison",
+    "redacted": false
+  },
+  {
+    "id": "E075",
+    "stamp": "20261101-010821",
+    "file": "075-20261101-010821.png",
+    "caption": "Text baseline and checksum evidence",
+    "redacted": false
+  },
+  {
+    "id": "E076",
+    "stamp": "20261101-010929",
+    "file": "076-20261101-010929.png",
+    "caption": "Attachment content and matching hashes",
+    "redacted": false
+  },
+  {
+    "id": "E077",
+    "stamp": "20261101-011608",
+    "file": "077-20261101-011608.png",
+    "caption": "Veeam preflight and system details",
+    "redacted": false
+  },
+  {
+    "id": "E078",
+    "stamp": "20261101-011757",
+    "file": "078-20261101-011757.png",
+    "caption": "Windows Veeam backup directory",
+    "redacted": false
+  },
+  {
+    "id": "E079",
+    "stamp": "20261101-011905",
+    "file": "079-20261101-011905.png",
+    "caption": "Windows network addresses",
+    "redacted": false
+  },
+  {
+    "id": "E080",
+    "stamp": "20261101-012045",
+    "file": "080-20261101-012045.png",
+    "caption": "Ubuntu route and shell troubleshooting",
+    "redacted": false
+  },
+  {
+    "id": "E081",
+    "stamp": "20261101-012550",
+    "file": "081-20261101-012550.png",
+    "caption": "Dedicated Windows backup account",
+    "redacted": false
+  },
+  {
+    "id": "E082",
+    "stamp": "20261101-012819",
+    "file": "082-20261101-012819.png",
+    "caption": "SMB share permissions",
+    "redacted": false
+  },
+  {
+    "id": "E083",
+    "stamp": "20261101-013014",
+    "file": "083-20261101-013014.png",
+    "caption": "Scoped SMB firewall rule",
+    "redacted": false
+  },
+  {
+    "id": "E084",
+    "stamp": "20261101-013148",
+    "file": "084-20261101-013148.png",
+    "caption": "SMB TCP 445 connection succeeds",
+    "redacted": false
+  },
+  {
+    "id": "E085",
+    "stamp": "20261101-013449",
+    "file": "085-20261101-013449.png",
+    "caption": "SMB upload test succeeds",
+    "redacted": false
+  },
+  {
+    "id": "E086",
+    "stamp": "20261101-014152",
+    "file": "086-20261101-014152.png",
+    "caption": "Download page navigation",
+    "redacted": false
+  },
+  {
+    "id": "E087",
+    "stamp": "20261101-014542",
+    "file": "087-20261101-014542.png",
+    "caption": "Recovery media architecture choices",
+    "redacted": false
+  },
+  {
+    "id": "E088",
+    "stamp": "20261101-014717",
+    "file": "088-20261101-014717.png",
+    "caption": "Repository package and 32-bit ISO download",
+    "redacted": false
+  },
+  {
+    "id": "E089",
+    "stamp": "20261101-014940",
+    "file": "089-20261101-014940.png",
+    "caption": "Veeam repository and candidate version",
+    "redacted": false
+  },
+  {
+    "id": "E090",
+    "stamp": "20261101-015345",
+    "file": "090-20261101-015345.png",
+    "caption": "Veeam Agent installation completes",
+    "redacted": false
+  },
+  {
+    "id": "E091",
+    "stamp": "20261101-015518",
+    "file": "091-20261101-015518.png",
+    "caption": "License agreement screen",
+    "redacted": false
+  },
+  {
+    "id": "E092",
+    "stamp": "20261101-015937",
+    "file": "092-20261101-015937.png",
+    "caption": "License acceptance selection",
+    "redacted": false
+  },
+  {
+    "id": "E093",
+    "stamp": "20261101-020045",
+    "file": "093-20261101-020045.png",
+    "caption": "Both agreements selected",
+    "redacted": false
+  },
+  {
+    "id": "E094",
+    "stamp": "20261101-021207",
+    "file": "094-20261101-021207.png",
+    "caption": "Recovery ISO creation fails for lack of space",
+    "redacted": false
+  },
+  {
+    "id": "E095",
+    "stamp": "20261101-021435",
+    "file": "095-20261101-021435.png",
+    "caption": "Root free space after ISO failure",
+    "redacted": false
+  },
+  {
+    "id": "E096",
+    "stamp": "20261101-021644",
+    "file": "096-20261101-021644.png",
+    "caption": "Veeam temporary workspace usage",
+    "redacted": false
+  },
+  {
+    "id": "E097",
+    "stamp": "20261101-021755",
+    "file": "097-20261101-021755.png",
+    "caption": "Disk usage analyzer",
+    "redacted": false
+  },
+  {
+    "id": "E098",
+    "stamp": "20261101-021846",
+    "file": "098-20261101-021846.png",
+    "caption": "Unsafe temporary cleanup encounters active bind mounts",
+    "redacted": false
+  },
+  {
+    "id": "E099",
+    "stamp": "20261101-022002",
+    "file": "099-20261101-022002.png",
+    "caption": "Bind mounts identify host firmware and module paths",
+    "redacted": false
+  },
+  {
+    "id": "E100",
+    "stamp": "20261101-022729",
+    "file": "100-20261101-022729.png",
+    "caption": "Veeam modules missing during repair",
+    "redacted": false
+  },
+  {
+    "id": "E101",
+    "stamp": "20261101-022916",
+    "file": "101-20261101-022916.png",
+    "caption": "DKMS rebuild requires current kernel headers",
+    "redacted": false
+  },
+  {
+    "id": "E102",
+    "stamp": "20261101-023147",
+    "file": "102-20261101-023147.png",
+    "caption": "Veeam modules rebuilt successfully",
+    "redacted": false
+  },
+  {
+    "id": "E103",
+    "stamp": "20261101-023536",
+    "file": "103-20261101-023536.png",
+    "caption": "Veeam Agent main interface",
+    "redacted": false
+  },
+  {
+    "id": "E104",
+    "stamp": "20261101-023701",
+    "file": "104-20261101-023701.png",
+    "caption": "Backup job naming screen",
+    "redacted": false
+  },
+  {
+    "id": "E105",
+    "stamp": "20261101-023744",
+    "file": "105-20261101-023744.png",
+    "caption": "Entire-machine mode remains selected",
+    "redacted": false
+  },
+  {
+    "id": "E106",
+    "stamp": "20261101-023937",
+    "file": "106-20261101-023937.png",
+    "caption": "Entire-machine mode confirmation",
+    "redacted": false
+  },
+  {
+    "id": "E107",
+    "stamp": "20261101-024029",
+    "file": "107-20261101-024029.png",
+    "caption": "Backup destination selection screen",
+    "redacted": false
+  },
+  {
+    "id": "E108",
+    "stamp": "20261101-024154",
+    "file": "108-20261101-024154.png",
+    "caption": "Network protocol selection screen",
+    "redacted": false
+  },
+  {
+    "id": "E109",
+    "stamp": "20261101-025050",
+    "file": "109-20261101-025050.png",
+    "caption": "Automatic schedule screen",
+    "redacted": false
+  },
+  {
+    "id": "E110",
+    "stamp": "20261101-025213",
+    "file": "110-20261101-025213.png",
+    "caption": "Full-machine job starts",
+    "redacted": false
+  },
+  {
+    "id": "E111",
+    "stamp": "20261101-025342",
+    "file": "111-20261101-025342.png",
+    "caption": "Backup running at 8 percent",
+    "redacted": false
+  },
+  {
+    "id": "E112",
+    "stamp": "20261101-025539",
+    "file": "112-20261101-025539.png",
+    "caption": "Snapshot backup transfer statistics",
+    "redacted": false
+  },
+  {
+    "id": "E113",
+    "stamp": "20261101-030344",
+    "file": "113-20261101-030344.png",
+    "caption": "Backup remains at 8 percent",
+    "redacted": false
+  },
+  {
+    "id": "E114",
+    "stamp": "20261101-030623",
+    "file": "114-20261101-030623.png",
+    "caption": "Root filesystem reaches 99 percent usage",
+    "redacted": false
+  },
+  {
+    "id": "E115",
+    "stamp": "20261101-030824",
+    "file": "115-20261101-030824.png",
+    "caption": "Storage and Veeam log discovery",
+    "redacted": false
+  },
+  {
+    "id": "E116",
+    "stamp": "20261101-031636",
+    "file": "116-20261101-031636.png",
+    "caption": "All System job and accessible SMB repository",
+    "redacted": false
+  },
+  {
+    "id": "E117",
+    "stamp": "20261101-032032",
+    "file": "117-20261101-032032.png",
+    "caption": "Local recovery bundle four checksums pass",
+    "redacted": false
+  },
+  {
+    "id": "E118",
+    "stamp": "20261101-032145",
+    "file": "118-20261101-032145.png",
+    "caption": "Stopped full-machine session shows Failed",
+    "redacted": false
+  }
+]
