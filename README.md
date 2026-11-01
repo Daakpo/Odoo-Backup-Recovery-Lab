@@ -1,52 +1,103 @@
 # Odoo Backup & Recovery Lab
 
-A hands-on infrastructure lab demonstrating coordinated PostgreSQL + Odoo filestore backups, isolated recovery, and Veeam Agent integration on Linux. 
+**Deploy a business application, back it up, and validate an isolated recovery.**
 
-**Author:** Germain Daakpo Amouzou  
-**Environment:** Ubuntu 22.04, Docker, PostgreSQL 16, Odoo 18, Veeam Agent for Linux
+**Germain Daakpo Amouzou** · Bilingual IT and cybersecurity professional
 
-[📄 Read the Full Technical Report](docs/REPORT.md) | [📊 View the Presentation](docs/Presentation.pdf)
+A hands-on lab using Ubuntu 22.04, Docker Compose, Odoo 18, PostgreSQL 16 and Veeam Agent for Linux. The manual recovery exercise restores quotation **S00001** into a separate application instance. Veeam recovery remains pending supporting evidence.
 
----
+[View the presentation PDF](docs/Presentation.pdf.pdf) · [PowerPoint release](https://github.com/Daakpo/Odoo-Backup-Recovery-Lab/releases/tag/Backup_Lab) · [Browse uploaded screenshots](ScreenShots_Proofs)
 
-## 📌 Scope & Outcomes
+## Results and verification boundaries
 
-*This project prioritizes verified evidence and honest scope over a perfect success story.*
+| Area | Documented result | Status |
+|---|---|---|
+| Deployment | Odoo running and PostgreSQL healthy in Docker | Verified in lab |
+| Manual backup | Approximately 7.5 MB recovery bundle; four SHA-256 checks pass | Verified in lab |
+| Manual recovery | Separate Compose project; restored quotation S00001 appears in SQL and Odoo | Verified in lab |
+| SMB destination | Dedicated Windows account successfully writes to the share | Access verified |
+| Veeam recovery | Successful final session and restored-file hashes still needed | Pending evidence |
+| Bare-metal recovery | Recovery media creation encountered insufficient space | Incomplete |
+| Recovery objectives | RTO and RPO have not been formally measured | Not claimed |
 
-| Area | Status | What the evidence establishes |
-| :--- | :--- | :--- |
-| **Odoo Deployment** | ✅ Verified | Odoo 18 and PostgreSQL 16 run healthy in Docker. |
-| **Manual Backup** | ✅ Verified | 7.5 MB bundle created; four SHA-256 checksums pass. |
-| **Manual Restore** | ✅ Verified | Separate Compose project restores DB and filestore; UI shows S00001. |
-| **Veeam SMB Access** | ✅ Verified | Dedicated Windows account successfully writes to SMB share. |
-| **Veeam Recovery** | ⚠️ Open | Final success session and recovered hashes pending. |
-| **Bare Metal / RTO** | ❌ Open | Recovery media failed (out of space); RTO/RPO not measured. |
+These results describe the documented lab. The repository currently provides the presentation and uploaded screenshots; live backup archives and deployment scripts are not included.
 
----
+## Architecture
 
-## 🏗 Architecture & Recovery Boundaries
+```mermaid
+flowchart TD
+  subgraph host["Windows host · shared physical failure domain"]
+    subgraph guest["Ubuntu virtual machine"]
+      subgraph original["Original Compose project"]
+        app["Odoo 18 + filestore"] --> db["PostgreSQL 16"]
+      end
+      bundle["Database, filestore and configuration bundle"]
+      app -->|"Pause writes; archive data"| bundle
+      db -->|"Logical database export"| bundle
+      recovery["Separate recovery project and volumes"]
+      agent["Veeam Agent for Linux"]
+    end
+    folder["VirtualBox shared folder"]
+    smb["Windows SMB backup destination"]
+    bundle --> folder
+    folder -->|"Manual restore verified"| recovery
+    bundle -.->|"Local staging copy"| agent
+    agent -.->|"Access verified; recovery evidence pending"| smb
+  end
+```
 
-![Architecture Diagram](evidence/01_deployment/architecture_diagram.png)
+Solid arrows show the documented manual backup and recovery path. Dashed arrows represent Veeam staging and integration, without claiming successful Veeam recovery.
 
-*Note: The diagram highlights a critical failure domain: the source data and backup destinations currently share the same physical Windows host.*
+The source VM and both backup destinations share the Windows host. Separate recovery volumes provide logical isolation; this setup does not establish protection from loss of the physical host.
 
----
+## Manual recovery workflow
 
-## 🛠 Skills Demonstrated
+```mermaid
+flowchart TD
+  pause["Pause Odoo writes"] --> capture["Back up database, filestore and configuration"]
+  capture --> integrity["Check four SHA-256 manifest entries"]
+  integrity --> restore["Restore into separate project and volumes"]
+  restore --> sql["SQL validation · S00001"]
+  restore --> browser["Browser validation · recovered quotation"]
+  sql --> verified["Manual application recovery verified"]
+  browser --> verified
+```
 
-*   **Containers:** Docker Engine, Compose, named volumes, internal networks.
-*   **Databases:** PostgreSQL logical backup (`pg_dump`), `pg_restore`, SQL verification.
-*   **Linux Operations:** Disk diagnosis, mount topology inspection, DKMS kernel module repair.
-*   **Backup Integration:** Veeam Agent for Linux, Windows SMB share permissions.
-*   **Verification:** SHA-256 manifest checks, isolated restore testing.
+Checksums establish byte integrity against the manifest. SQL and browser checks establish usable application data. They do not measure recovery time or demonstrate a completed Veeam restore.
 
----
+## Skills demonstrated
 
-## 📂 Repository Structure
+- **Linux operations:** Storage diagnosis, permissions and kernel-module troubleshooting.
+- **Containers:** Docker Compose, named volumes, service health and recovery isolation.
+- **Database recovery:** PostgreSQL logical backup and restore with SQL validation.
+- **Application recovery:** Coordinated Odoo database and filestore recovery.
+- **Backup integration:** Veeam Agent for Linux and a dedicated Windows SMB account.
+- **Evidence:** SHA-256 verification and documentation of successful and failed attempts.
 
-*   **`/docs`**: Full technical report and presentation slides.
-*   **`/compose`**: Sanitized Docker Compose files and `.env.example`.
-*   **`/scripts`**: Verification and restore automation scripts.
-*   **`/evidence`**: All 118 screenshots, organized by workflow stage.
+## Evidence and repository contents
 
----
+| Location | Available material |
+|---|---|
+| [Presentation PDF](docs/Presentation.pdf.pdf) | Portfolio project walkthrough |
+| [Release](https://github.com/Daakpo/Odoo-Backup-Recovery-Lab/releases/tag/Backup_Lab) | Downloadable PowerPoint presentation |
+| [Uploaded screenshots](ScreenShots_Proofs) | 38 images from the lab workflow |
+| This README | Project summary, architecture and recovery workflow diagrams |
+
+The earlier release description lists a broader package. Configuration templates, automation scripts and a standalone report are not currently included on `main`. Use the table above as the inventory of available repository materials.
+
+## Next verification milestones
+
+1. Capture a completed Veeam backup session and a valid restore point.
+2. Recover files to a separate location and compare their hashes.
+3. Measure recovery time and the age of the recovered data.
+4. Test a backup copy stored independently of the source Windows host.
+
+## Résumé en français
+
+Déploiement d’Odoo et PostgreSQL dans Docker sur Ubuntu, sauvegarde coordonnée de la base de données et du filestore, puis restauration dans un environnement distinct. Validation par SQL, interface Odoo et empreintes SHA-256. Intégration d’un partage SMB pour Veeam et documentation des limites de récupération.
+
+## Author
+
+**Germain Daakpo Amouzou** · Bilingual IT and cybersecurity professional
+
+[LinkedIn](https://www.linkedin.com/in/gdamouzou) · [GitHub](https://github.com/Daakpo)
